@@ -123,7 +123,11 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
     // --- Fin de la nueva función ---
+<<<<<<< HEAD
 });
 
 
 
+=======
+});
+>>>>>>> b833b0af6990c460ae6df1361961b82818f6bdd6

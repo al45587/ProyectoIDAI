@@ -3,9 +3,88 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Tienda</title>
+    <link rel="stylesheet" href="menu-estilos.css">
 </head>
 <body>
+    <header>
+        <h1>Tienda</h1>
+        <div class="container-icon">
+            <img src="imagenes/car.svg" alt="" class="carrito">
+            <div class="count-pruducts">
+                <span id="contador-productos">0
+                    
+                </span>
+            </div>
+            
+            <div class="container-cart-products hidden-cart">
+                <div class="cart-product">
+                    <div class="info-cart-product">
+                        <span class="cantidad-producto-carrito">
+                            1
+                        </span>
+                        <p class="titulo-producto-carrito">
+                            Consome
+                        </p>
+                        <span class="precio-producto-carrito">
+                            90
+                        </span>
+                    </div>
+
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="icon-close">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+</svg>
+
+                </div>
+                <div class="cart-total">
+                    <h3>total</h3>
+                    <span class="total-pagar">200</span>
+                </div>
+
+            </div>
+        </div>
+    </header>
+    <div class="container-items">
+        <div class="item">
+            <figure>
+                <img src="imagenes/platillo1.jpg" alt="producto">
+            </figure>
+            <div class="info-product">
+                <h2>Consome</h2>
+                <p class="price">90</p>
+                <button>Añadir al carrito</button>
+            </div>
+        </div><div class="item">
+            <figure>
+                <img src="imagenes/platillo2.jpg" alt="producto">
+            </figure>
+            <div class="info-product">
+                <h2>Tortas</h2>
+                <p class="price">120</p>
+                <button>Añadir al carrito</button>
+            </div>
+        </div><div class="item">
+            <figure>
+                <img src="imagenes/platillo3.jpg" alt="producto">
+            </figure>
+            <div class="info-product">
+                <h2>Tacos</h2>
+                <p class="price">25</p>
+                <button>Añadir al carrito</button>
+            </div>
+        </div><div class="item">
+            <figure>
+                <img src="imagenes/barbacoa.jpg" alt="producto">
+            </figure>
+            <div class="info-product">
+                <h2>Kg</h2>
+                <p class="price">150</p>
+                <button>Añadir al carrito</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="menu.js"></script>
     
 </body>
 </html>

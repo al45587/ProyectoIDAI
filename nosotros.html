@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog Verde – Cuidemos el Medio Ambiente</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Lobster&family=Pacifico&family=Playwrite+DK+Loopet:wght@100..400&family=Playwrite+MX+Guides&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      line-height: 1.6;
+      background-color: #fcce94;
+      color: #333;
+      padding: 20px;
+    }
+
+    header {
+      text-align: center;
+      background-color: #f1cea2;
+      color: black;
+      padding: 30px 10px;
+      margin-bottom: 30px;
+    }
+
+    header h1 {
+      font-size: 2.5em;
+    }
+
+    .blog-container {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    .blog-post {
+      display: flex;
+      gap: 20px;
+      background-color: #f1cea2;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      padding: 20px;
+      align-items: center;
+      transition: transform 0.3s;
+    }
+
+    
+
+    .blog-post:hover {
+      transform: scale(1.01);
+    }
+
+    .blog-post img {
+      width: 400px;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .blog-post .content {
+      flex: 1;
+    }
+
+    .blog-post p {
+      font-size: 1em;
+    }
+
+    @media screen and (max-width: 768px) {
+      .blog-post {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .blog-post img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Cuidemos el planeta</h1>
+  </header>
+
+  <div class="blog-container">¨
+    <h1>¿Cómo lo haremos?</h1>
+    
+    <div class="blog-post">
+      <img src="imagenes/tres erres.png" alt="Reciclaje" class="tres">
+      <div class="content">
+        <h1>Todo aporta</h1>
+        <p>Buscamos ser un negocio que se caracterice no solo por la calidad de sus productos sino que también busque una manera de ayudar a disminuir su impacto en el medio ambiente</p>
+      </div>
+    </div>
+
+    <div class="blog-post">
+      <img src="imagenes/bolsa.png" alt="Energía renovable">
+      <div class="content">
+        <h1>Productos compostables</h1>
+        <p>Porque sabemos que tener una huella ecológica al 0% no es posible implementamos el uso de bolsas compostables</p>
+      </div>
+    </div>
+
+    <div class="blog-post">
+      <img src="imagenes/recipientes.png" alt="Consumo responsable">
+      <div class="content">
+        <h1>¡Campaña: Te ayudamos a ayudar!</h1>
+        <p>Trae tu recipiente y recibe un descuento en el total de tu compra</p>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>
+

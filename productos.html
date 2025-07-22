@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Tienda</title>
+    <link rel="stylesheet" href="menu-estilos.css">
+</head>
+<body>
+
+<header>
+    <h1>Tienda</h1>
+    <div class="container-icon">
+        <img src="imagenes/car.svg" alt="carrito" class="carrito" onclick="toggleCarrito()">
+        <div class="count-products">
+            <span id="contador-productos">0</span>
+        </div>
+        <div class="container-cart-products hidden-cart" id="cart-container">
+            <!-- Aquí se agregan los productos del carrito -->
+            <div class="cart-total">
+                <h3>Total:</h3>
+                <span class="total-pagar" id="total">0</span>
+            </div>
+            <button onclick="vaciarCarrito()">Vaciar carrito</button>
+        </div>
+    </div>
+</header>
+
+<main class="container-items">
+    <div class="item">
+        <figure><img src="imagenes/platillo1.jpg" alt="producto"></figure>
+        <div class="info-product">
+            <h2>Consome</h2>
+            <p class="price">90</p>
+            <button onclick="agregarAlCarrito('Consome', 90)">Añadir al carrito</button>
+        </div>
+    </div>
+    <div class="item">
+        <figure><img src="imagenes/platillo2.jpg" alt="producto"></figure>
+        <div class="info-product">
+            <h2>Tortas</h2>
+            <p class="price">120</p>
+            <button onclick="agregarAlCarrito('Tortas', 120)">Añadir al carrito</button>
+        </div>
+    </div>
+    <div class="item">
+        <figure><img src="imagenes/platillo3.jpg" alt="producto"></figure>
+        <div class="info-product">
+            <h2>Tacos</h2>
+            <p class="price">25</p>
+            <button onclick="agregarAlCarrito('Tacos', 25)">Añadir al carrito</button>
+        </div>
+    </div>
+    <div class="item">
+        <figure><img src="imagenes/barbacoa.jpg" alt="producto"></figure>
+        <div class="info-product">
+            <h2>Kg</h2>
+            <p class="price">150</p>
+            <button onclick="agregarAlCarrito('Kg', 150)">Añadir al carrito</button>
+        </div>
+    </div>
+</main>
+
+<script>
+    let carrito = [];
+    const cartContainer = document.getElementById("cart-container");
+    const contadorProductos = document.getElementById("contador-productos");
+    const totalPagar = document.getElementById("total");
+
+    function agregarAlCarrito(nombre, precio) {
+        const productoExistente = carrito.find(p => p.nombre === nombre);
+
+        if (productoExistente) {
+            productoExistente.cantidad++;
+        } else {
+            carrito.push({ nombre, precio, cantidad: 1 });
+        }
+
+        actualizarCarrito();
+    }
+
+    function actualizarCarrito() {
+        const productosHTML = carrito.map(p => {
+            const subtotal = p.precio * p.cantidad;
+            return `
+                <div class="cart-product">
+                    <div class="info-cart-product">
+                        <span class="cantidad-producto-carrito">${p.cantidad}</span>
+                        <p class="titulo-producto-carrito">${p.nombre}</p>
+                        <span class="precio-producto-carrito">$${subtotal}</span>
+                    </div>
+                </div>
+            `;
+        }).join("");
+
+        document.getElementById("cart-container").innerHTML = productosHTML + `
+            <div class="cart-total">
+                <h3>Total:</h3>
+                <span class="total-pagar" id="total">${calcularTotal()}</span>
+            </div>
+            <button onclick="vaciarCarrito()">Vaciar carrito</button>
+        `;
+
+        contadorProductos.textContent = carrito.reduce((acc, p) => acc + p.cantidad, 0);
+    }
+
+    function calcularTotal() {
+        return carrito.reduce((total, p) => total + p.precio * p.cantidad, 0);
+    }
+
+    function vaciarCarrito() {
+        carrito = [];
+        actualizarCarrito();
+    }
+
+    function toggleCarrito() {
+        cartContainer.classList.toggle("hidden-cart");
+    }
+</script>
+
+</body>
+</html>

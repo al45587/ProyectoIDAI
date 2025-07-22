@@ -6,13 +6,13 @@
             line-height: 1.6;
             margin: 0;
             padding: 20px;
-            background-color: #f4f4f4;
+            background-color: #fcce94;
             color: #333;
         }
         .container {
             max-width: 800px;
             margin: 30px auto;
-            background: #fff;
+            background: #ef8700;
             padding: 30px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);

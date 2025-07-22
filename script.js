@@ -5,7 +5,7 @@ loadMoreBtn.onclick = () => {
 
 let boxes = [...document.querySelectorAll('.box-container .box')];
 for(var i = currentItem; i< currentItem + 4; i++) {
-    boxes[i].style.dislpay = 'inline-block';
+    boxes[i].style.display = 'inline-block';
 }
 currentItem += 4;
 if(currentItem >= boxes.length) {
@@ -50,11 +50,11 @@ function insertarCarrito(elemento) {
 
     <td> <img src ="${elemento.imagen}" width=100 /> </td>
 
-    <td> ${elemento .titulo} </td>
+    <td> ${elemento.titulo} </td>
 
-    <td> ${elemento .precio} </td>
+    <td> ${elemento.precio} </td>
 
-    <td><a href= "#" class= "borrar" data-id= "$(elemento.id0) <x></a> </td>
+    <td><a href= "#" class= "borrar" data-id= "$(elemento.id) <x></a> </td>
     `;
 
     lista.appendChild(row);
